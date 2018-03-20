@@ -20,6 +20,7 @@ window.addEventListener('load', function() {
   // Now you can start your app & access web3 freely:
   //startApp()
   id_token = ""
+  //window.token = token
 })
 
 window.onload = function(){

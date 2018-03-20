@@ -1,6 +1,6 @@
 (function(){function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s}return e})()({1:[function(require,module,exports){
 var abi = require('../')
-var contractAddress = '0x8a2C5FeC9Ba6F33F7804940e46A836A6D21404E4' // Pluton mainnet address
+var contractAddress = '0x045129CBA354A107eCEb686300DABe2BdEe6e453' // Destler Doubloons!
 var is_rit_field
 var token
 var addr
@@ -14,13 +14,14 @@ window.addEventListener('load', function() {
   } else {
     console.log('No web3? You should consider trying MetaMask!')
     // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
-    web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8080"));
+    web3 = new Web3(new Web3.providers.HttpProvider("http://destler-doubloons.com/"));
   }
 
   token = web3.eth.contract(abi).at(contractAddress)
   // Now you can start your app & access web3 freely:
   //startApp()
   id_token = ""
+  //window.token = token
 })
 
 window.onload = function(){
